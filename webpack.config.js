@@ -8,7 +8,10 @@ module.exports = {
         path: path.resolve(__dirname, 'dist')
     },
     plugins: [
-        /* The ProvidePlugin makes a package available as a variable in every module compiled through webpack */
-        new webpack.ProvidePlugin({ _: 'lodash' })
+        /* We can also use the ProvidePlugin to expose a single export of a module by configuring it with
+         an "array path" (e.g. [module, child, ...children?]) */
+        new webpack.ProvidePlugin({ 
+            join: ['lodash', 'join']
+         })
     ]
 }
