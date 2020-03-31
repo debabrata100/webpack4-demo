@@ -19,6 +19,7 @@
   },
   "homepage": "https://github.com/debabrata100/webpack4-demo#readme",
   "devDependencies": {
+    "imports-loader": "^0.8.0",
     "webpack": "^4.42.1",
     "webpack-cli": "^3.3.11"
   },
