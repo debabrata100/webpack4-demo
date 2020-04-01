@@ -6,7 +6,22 @@ module.exports = {
         filename: 'main.js',
         path: path.resolve(__dirname, 'dist')
     },
-    mode: 'development',
+    mode: 'production',
+    module:{
+        rules: [
+            {
+                test: /\.js$/,
+                exclude: /node_modules/,
+                use: {
+                    loader: 'babel-loader',
+                    options: {
+                        presets: ['@babel/preset-env'],
+                        plugins: ['@babel/plugin-transform-runtime']
+                      }
+                }
+            }
+        ]
+    },
     devServer:{
         port: 5000,
         contentBase: __dirname + '/dist',
